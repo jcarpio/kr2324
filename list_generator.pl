@@ -1,5 +1,3 @@
-
-
 /*
 
 list_generator(+N, +Range, -Result)
@@ -8,9 +6,7 @@ list_generator(+N, +Range, -Result)
 
 */
 
-
 list_generator(0, _, []).
-
 
 list_generator(N, Range, [Elem|R]):-  N > 0, N2 is N-1, 
   list_generator(N2, Range, R), random(1, Range, Elem).   
