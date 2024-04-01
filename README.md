@@ -18,5 +18,5 @@ Knowledger Representation at University of Huelva (Spain)
 ### Exercism.org
 https://exercism.org/tracks/prolog/exercises
 
-### ## Project Euler
+### Project Euler
 https://projecteuler.net/archives
