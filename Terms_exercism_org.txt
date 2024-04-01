@@ -1,0 +1,7 @@
+In summary, our Terms of Service say that:
+
+    You must act in a way that is in line with Exercism's values of respect and empathy per our Code of conductThe link opens in a new window or tab. If you do not, we have the right to block your usage of the platform.
+    Anything you submit to the site (e.g. your solutions, feedback, etc) remains your property, but you grant Exercism a licence to use it as we wish in perpetuity.
+    You may use exercises (provided by Exercism) and solutions (created by users) in accordance with the MITThe link opens in a new window or tab and CC-BY-SA-4.0The link opens in a new window or tab licences respectively.
+
+You can read our full Terms of ServiceThe link opens in a new window or tab.
