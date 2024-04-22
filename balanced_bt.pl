@@ -4,7 +4,8 @@ balanced(+BinaryTree)
   is true if BinaryTree is balanced. For all nodes
   the differece between left tree deep and right tree
   deep is maximum 1 is absolute value.
-  
+
+       Tree 1                    Tree 2        Tree 3 
          1                          1             1
     	/ \                        / \           / \
        2   5                      2   3         2   3
@@ -12,7 +13,7 @@ balanced(+BinaryTree)
      3       6                  4
     /         \
    4	       7
-   
+   not balanced                 balanced        balanced
    Diff = 4 - 1 = 3           Diff = For all nodes   
                                      Deep left - Deep right 
                                      Max 1 in absolute value.
