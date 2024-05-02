@@ -22,3 +22,19 @@ https://exercism.org/tracks/prolog/exercises
 ### Project Euler
 https://projecteuler.net/archives
 
+### Digital Austria
+https://www.digitalaustria.gv.at/eng/
+
+### DC Norris Cancer Prolog Precautionary
+https://github.com/dcnorris/precautionary
+https://arxiv.org/abs/2012.05301
+
+### Lottery Problem
+https://github.com/cushydom88/lottery-problem
+https://arxiv.org/abs/2307.12430
+
+### Congreso EsLibre
+https://eslib.re/2024/horario/
+
+
+
