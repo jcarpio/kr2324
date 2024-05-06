@@ -1,6 +1,8 @@
 # kr2324
 Knowledger Representation at University of Huelva (Spain)
 
+## [Irregular Sudoku 9x9 Exercise](irregular_sudoku_9x9.jpg)
+
 # Links
 ## YouTube Prolog Dr. Jose Carpio 
 - https://www.youtube.com/user/josecarpioc
