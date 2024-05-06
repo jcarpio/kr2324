@@ -6,4 +6,8 @@
 
 
 ## Links
+### Irregular Sudoku
 https://sudokuspoiler.com/irregularsudoku/irregularsudoku9
+
+### Hyper Sudoku
+http://www.sudoku-space.com/hyper-sudoku/
