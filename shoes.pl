@@ -58,22 +58,24 @@ requirements_variables(Rs, Vars) :-
 		maplist(constrain_worker(Rs), Workers),
 		maplist(constrain_product(Rs), Products).
 
-% Los slots de las tareas puder solaparse y tienen que respetar el orden definido
-% por task_a_needs_task_b. Si una tarea tiene varios slots, estos deben ser consecutivos
+% Task slots can overlap and must respect the defined order
+% by task_a_needs_task_b. If a task has several slots, they must be consecutive
+
+
 constrain_task(Rs, Task) :-
         tfilter(task_req(Task), Rs, Sub),
 		pairs_slots(Sub, Vs),
         all_different(Vs).       
 
-% Los slots de un trabajador tienen que ser diferentes,
-% un trabajador no puede estar haciendo dos tareas al mismo tiempo		
+% A worker's slots have to be different,
+% a worker cannot be doing two tasks at the same time
 constrain_worker(Rs, Worker) :-
         tfilter(worker_req(Worker), Rs, Sub),
 		pairs_slots(Sub, Vs),
         all_different(Vs).		
 		
-% El producto no necesita que sus slots sean diferentes. Se pueden
-% solapar diferentes tareas de un producto
+% The product does not need its slots to be different. They can be
+% overlap different tasks of a product
 
 constrain_product(Rs, Product) :-
         tfilter(product_req(Product), Rs, Sub),
@@ -148,6 +150,11 @@ task shape_wool need task hummer_wool
 task glue_sole need task cut_sole and task shape_wool
 
 */
+
+c(hummer_wool, order_wool).
+task_a_needs_task_b(shape_wool, hummer_wool).
+task_a_needs_task_b(glue_sole, cut_sole).
+task_a_needs_task_b(glue_sole, shape_wool).
 
 c(hummer_wool, order_wool).
 task_a_needs_task_b(shape_wool, hummer_wool).
