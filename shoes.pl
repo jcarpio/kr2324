@@ -51,20 +51,32 @@ requirements_variables(Rs, Vars) :-
         slots_per_week(SPW),
         Max #= SPW - 1,
         Vars ins 0..Max,
+		maplist(constrain_task(Rs), Rs),
         products(Products),
         workers(Workers),
-        tasks(Tasks),
-		maplist(constrain_task(Rs), Tasks),
 		maplist(constrain_worker(Rs), Workers),
 		maplist(constrain_product(Rs), Products).
 
 % Task slots can overlap and must respect the defined order
 % by task_a_needs_task_b. If a task has several slots, they must be consecutive
-constrain_task(Rs, Task) :-
-        tfilter(task_req(Task), Rs, Sub),
-		pairs_slots(Sub, Vs),
-        all_different(Vs).       
 
+
+constrain_task(Rs, req(_Product, FTask,_Worker,_Time)-_Slots) :-        
+		findall(FTask-STask, task_a_needs_task_b(STask, FTask), Ts),		
+		maplist(task_couplings(Rs), Ts).
+
+task_couplings(Rs, F-S) :-
+        member(req(Product, F,_, _)-FSlots, Rs),
+		member(req(Product, S,_,_)-SSlots, Rs),
+		slots_first(FSlots, SSlots).
+		
+slots_first([], _).		
+slots_first([FSlot|FSlots], SSlots):-
+  maplist(greater(FSlot), SSlots),
+  slots_first(FSlots, SSlots).
+ 
+greater(X, Y):- X #< Y.
+  	
 % A worker's slots have to be different,
 % a worker cannot be doing two tasks at the same time
 constrain_worker(Rs, Worker) :-
@@ -219,14 +231,14 @@ slots_per_week(294). % 7 days a week
 
 slots_per_day(42).	 % 10 minutes slot, 7 hours a day	
 
-product_task_worker_time(mel, order, orderer1, 1).
-product_task_worker_time(mel, hummer, hummer1, 2).
+product_task_worker_time(mel, order_wool, orderer1, 1).
+product_task_worker_time(mel, hummer_wool, hummer1, 2).
 product_task_worker_time(mel, shape_wool, shaper1, 2).
 product_task_worker_time(mel, cut_sole, cutter1, 1).
 product_task_worker_time(mel, glue_sole, gluer1, 3).
 
-product_task_worker_time(yves, order, orderer1, 1).
-product_task_worker_time(yves, hummer, hummer1, 2).
+product_task_worker_time(yves, order_wool, orderer1, 1).
+product_task_worker_time(yves, hummer_wool, hummer1, 2).
 product_task_worker_time(yves, shape_wool, shaper1, 2).
 product_task_worker_time(yves, cut_sole, cutter1, 1).
 product_task_worker_time(yves, glue_sole, gluer1, 3).
