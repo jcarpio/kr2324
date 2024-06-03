@@ -1,0 +1,22 @@
+https://exercism.org/profiles/enkire
+
+
+1. Hello World
+2. Triangle
+3. Isogram
+4. RNA Transcription
+5. Anagram
+6. Pascal's Triangle
+7. Grains
+8. Leap
+9. Satellite
+10. Zebra Puzzle
+11. Collatz Conjecture
+12. Pangram
+13. Flatten-Array
+14. Reverse-String
+15. Binary Search
+16. Protein Translation
+17. Word Count
+18. ISBN Verifier
+19. Custom Set
